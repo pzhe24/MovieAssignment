@@ -38,15 +38,15 @@ const ShowDescription = () => {
       <Header />
       <div className="details-page">
         <Container>
-          <Row xs={1} sm={1}>
-            <Col className="col-lg-3 col-md-auto col-xs-1">
+          <Row xs={1} sm={1} md={1} lg={3} xl={3}>
+            <Col>
               <img
                 className="movie-poster"
                 src={show.picture}
                 alt={show.tvName}
               />
             </Col>
-            <Col className="col-lg-8 col-md-auto">
+            <Col>
               <p className="title" style={{ color: "#A0BCF5" }}>
                 {show.tvName}&emsp;
                 <span class="text-info">({show.year})</span>
