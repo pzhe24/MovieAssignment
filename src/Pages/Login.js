@@ -10,7 +10,7 @@ const Login = () => {
       <div className="login-form">
         <Container>
           <Row className="justify-content-center">
-            <Col className="col-6">
+            <Col className="col-12 col-sm-9 col-lg-4">
               <Form>
                 <h4>
                   <b>

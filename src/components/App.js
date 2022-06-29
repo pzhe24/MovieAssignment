@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import HomePage from "../Pages/Homepage";
 import Movies from "../Pages/Movies";
-// import MovieDesc from "../Pages/MovieDesc";
+import MovieDescription from "../Pages/MovieDescription";
+import ShowDescription from "../Pages/ShowDescription";
 import Login from "../Pages/Login";
 import Register from "../Pages/Registration";
 import TVShows from "../Pages/TVShows";
@@ -55,18 +56,12 @@ const App = () => {
           />
           <Route path="/movies" element={<Movies movies={movies} />} />
           <Route path="/tv" element={<TVShows shows={tvShows} />} />
-          {/* <Route path="movies/:id" element={<MovieDesc />} /> */}
+          <Route path="/movies/:id" element={<MovieDescription />} />
+          <Route path="/tv/:id" element={<ShowDescription />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
-
-      {/* <BrowserRouter>
-          <Routes>
-            
-            <Route path="tv/:id" element={<TVDesc/>}/> 
-         </Routes>
-        </BrowserRouter> */}
     </div>
   );
 };

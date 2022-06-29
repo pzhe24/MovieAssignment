@@ -10,7 +10,7 @@ const Registration = () => {
       <div className="register-form">
         <Container>
           <Row className="justify-content-center">
-            <Col className="col-6">
+            <Col className="col-12 col-sm-9 col-lg-5">
               <Form>
                 <h5>
                   <b>

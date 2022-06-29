@@ -63,6 +63,19 @@ body{
     margin-top: 20px;
 }
 
+.carousel-indicators button{
+    width: 10px !important;
+    height: 10px !important;
+    margin-left: 15px !important;
+    border-radius: 50%;
+}
+
+  
+.carousel-indicators .active{
+    background-color: rgb(245, 84, 84);
+}
+
+
 /* Featured movies CSS */
 #featuredmovie-title{
     margin: 15px 0px;
