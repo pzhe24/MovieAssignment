@@ -59,8 +59,9 @@ body{
 /* Hero Movie CSS */
 .carousel{
     border-radius: 15px;
-    overflow:hidden;
+    /* overflow:hidden; */
     margin-top: 20px;
+    width:100%;
 }
 
 .carousel-indicators button{
@@ -200,4 +201,40 @@ footer h5{
     text-align: left;
     margin-left: 20px;
     font-size: 2rem;
+}
+
+
+
+/* Details page CSS */
+
+
+.details-page .movie-poster{
+    width: 280px;
+    height:auto;
+    border-radius: 5px;
+    margin-right:20px;
+}
+.details-page .container{
+    padding: 72px;
+}
+
+.title{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.genres{
+    font-size: 18px;
+}
+
+.description{
+    font-size: 17px;
+}
+
+.seasons, .episodes{
+    font-size:16px;
+}
+
+.details-page button:first-of-type{
+    margin-right: 35px;
 }

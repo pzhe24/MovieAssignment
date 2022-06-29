@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Col, Row, Container, Button } from "react-bootstrap";
 
 const ShowDescription = () => {
   const [show, setShow] = useState({
@@ -35,17 +36,36 @@ const ShowDescription = () => {
   return (
     <div>
       <Header />
-      <p>
-        <img src={show.picture} alt={show.tvName} />
-      </p>
-      <p>{show.tvName}</p>
-      <p class="text-secondary">({show.year})</p>
-      <p>{show.description}</p>
-      <p>{show.genres.join(", ")}</p>
-      <p>{show.seasons}</p>
-      <p>{show.episodes}</p>
-      <p>{show.rentPrice}</p>
-      <p>{show.buyPrice}</p>
+      <div className="details-page">
+        <Container>
+          <Row xs={1} sm={1}>
+            <Col className="col-lg-3 col-md-auto col-xs-1">
+              <img
+                className="movie-poster"
+                src={show.picture}
+                alt={show.tvName}
+              />
+            </Col>
+            <Col className="col-lg-8 col-md-auto">
+              <p className="title">
+                {show.tvName}&emsp;
+                <span class="text-info">({show.year})</span>
+              </p>
+
+              <p className="genres">Genres: {show.genres.join(", ")}</p>
+              <p style={{ fontSize: "25px" }}>Overview</p>
+              <p className="description">{show.description}</p>
+              <p style={{ fontSize: "20px" }}>Number of Seasons</p>
+              <p className="seasons">{show.seasons}</p>
+              <p style={{ fontSize: "20px" }}>Number of Episodes</p>
+              <p className="episodes">{show.episodes}</p>
+
+              <Button variant="primary">Rent: {show.rentPrice}</Button>
+              <Button variant="primary">Buy Now: {show.buyPrice}</Button>
+            </Col>
+          </Row>
+        </Container>
+      </div>
       <Footer />
     </div>
   );
