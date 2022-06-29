@@ -38,7 +38,7 @@ const ShowDescription = () => {
       <Header />
       <div className="details-page">
         <Container>
-          <Row xs={1} sm={1} md={1} lg={3} xl={3}>
+          <Row xs={1} sm={1} md={1} lg={2} xl={2}>
             <Col>
               <img
                 className="movie-poster"

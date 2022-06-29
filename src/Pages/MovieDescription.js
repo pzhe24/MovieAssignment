@@ -36,8 +36,8 @@ const MovieDescription = () => {
     <div>
       <Header />
       <div className="details-page">
-        <Container style={{ paddingBottom: "85px" }}>
-          <Row xs={1} sm={1} md={1} lg={3} xl={3}>
+        <Container style={{ paddingBottom: "65px" }}>
+          <Row xs={1} sm={1} md={1} lg={2} xl={2}>
             <Col>
               <img
                 className="movie-poster"
