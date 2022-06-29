@@ -17,7 +17,7 @@ const App = () => {
   useEffect(() => {
     //Async operation get/post, put or delete
     const fetchMovies = () => {
-      fetch("http://localhost:5000/movies")
+      fetch("https://cjv-movie-api.herokuapp.com/movies")
         .then((returnedData) => {
           return returnedData.json();
         })
@@ -31,7 +31,7 @@ const App = () => {
     fetchMovies();
 
     const fetchTV = () => {
-      fetch("http://localhost:5000/tvshows")
+      fetch("https://cjv-movie-api.herokuapp.com/tvshows")
         .then((returnedData) => {
           return returnedData.json();
         })
