@@ -47,17 +47,21 @@ const ShowDescription = () => {
               />
             </Col>
             <Col className="col-lg-8 col-md-auto">
-              <p className="title">
+              <p className="title" style={{ color: "#A0BCF5" }}>
                 {show.tvName}&emsp;
                 <span class="text-info">({show.year})</span>
               </p>
 
               <p className="genres">Genres: {show.genres.join(", ")}</p>
-              <p style={{ fontSize: "25px" }}>Overview</p>
+              <p style={{ fontSize: "25px", color: "#A0BCF5" }}>Overview</p>
               <p className="description">{show.description}</p>
-              <p style={{ fontSize: "20px" }}>Number of Seasons</p>
+              <p style={{ fontSize: "20px", color: "#A0BCF5" }}>
+                Number of Seasons
+              </p>
               <p className="seasons">{show.seasons}</p>
-              <p style={{ fontSize: "20px" }}>Number of Episodes</p>
+              <p style={{ fontSize: "20px", color: "#A0BCF5" }}>
+                Number of Episodes
+              </p>
               <p className="episodes">{show.episodes}</p>
 
               <Button variant="primary">Rent: {show.rentPrice}</Button>

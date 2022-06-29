@@ -46,7 +46,7 @@ const MovieDescription = () => {
               />
             </Col>
             <Col className="col-lg-8 col-md-auto">
-              <p className="title">
+              <p className="title" style={{ color: "#A0BCF5" }}>
                 {movie.movieName}&emsp;
                 <span class="text-info">({movie.year})</span>
               </p>
@@ -54,7 +54,7 @@ const MovieDescription = () => {
                 Genres: {movie.genres.join(", ")}&emsp;&emsp;Runtime:{" "}
                 {movie.length}
               </p>
-              <p style={{ fontSize: "25px" }}>Overview</p>
+              <p style={{ fontSize: "25px", color: "#A0BCF5" }}>Overview</p>
               <p className="description">{movie.description}</p>
 
               <Button variant="primary" style={{ marginTop: "20px" }}>
