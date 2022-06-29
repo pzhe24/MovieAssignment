@@ -64,8 +64,12 @@ const ShowDescription = () => {
               </p>
               <p className="episodes">{show.episodes}</p>
 
-              <Button variant="primary">Rent: {show.rentPrice}</Button>
-              <Button variant="primary">Buy Now: {show.buyPrice}</Button>
+              <Button variant="primary" style={{ marginTop: "20px" }}>
+                Rent: {show.rentPrice}
+              </Button>
+              <Button variant="primary" style={{ marginTop: "20px" }}>
+                Buy Now: {show.buyPrice}
+              </Button>
             </Col>
           </Row>
         </Container>
