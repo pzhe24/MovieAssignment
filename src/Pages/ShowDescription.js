@@ -21,7 +21,7 @@ const ShowDescription = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tvshows/${id}`)
+    fetch(`https://cjv-movie-api.herokuapp.com/tvshows/${id}`)
       .then((returnedData) => {
         return returnedData.json();
       })

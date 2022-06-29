@@ -20,7 +20,7 @@ const MovieDescription = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/movies/${id}`)
+    fetch(`https://cjv-movie-api.herokuapp.com/movies/${id}`)
       .then((returnedData) => {
         return returnedData.json();
       })
