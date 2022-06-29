@@ -59,9 +59,8 @@ body{
 /* Hero Movie CSS */
 .carousel{
     border-radius: 15px;
-    /* overflow:hidden; */
+    overflow: hidden;
     margin-top: 20px;
-    width:100%;
 }
 
 .carousel-indicators button{

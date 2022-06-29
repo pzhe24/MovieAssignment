@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Col, Row, Container } from "react-bootstrap";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import sweeny from "../assets/photos/Hero/sweeny.jpg";
 import lesmis from "../assets/photos/Hero/lesmis.jpg";
@@ -10,9 +10,9 @@ import goodwill from "../assets/photos/Hero/goodwillhunting.jpg";
 const Hero = () => {
   return (
     <div>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-12">
+      <Container>
+        <Row>
+          <Col>
             <Carousel>
               <Carousel.Item>
                 <img
@@ -60,9 +60,9 @@ const Hero = () => {
                 />
               </Carousel.Item>
             </Carousel>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
