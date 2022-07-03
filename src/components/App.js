@@ -9,6 +9,8 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Registration";
 import TVShows from "../Pages/TVShows";
 
+import moviesContext from "../context/moviesContext";
+
 import "../assets/css/App.css";
 
 const App = () => {
@@ -47,22 +49,19 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <moviesContext.Provider value={{ movies, tvShows }}>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={<HomePage movies={movies} tvShows={tvShows} />}
-          />
-          <Route path="/movies" element={<Movies movies={movies} />} />
-          <Route path="/tv" element={<TVShows shows={tvShows} />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/tv" element={<TVShows />} />
           <Route path="/movies/:id" element={<MovieDescription />} />
           <Route path="/tv/:id" element={<ShowDescription />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </moviesContext.Provider>
   );
 };
 

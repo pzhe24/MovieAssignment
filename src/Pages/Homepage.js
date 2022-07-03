@@ -5,15 +5,15 @@ import FeaturedTV from "../components/FeaturedTV";
 import Content from "../components/Content";
 import Footer from "../components/Footer";
 
-const Homepage = (props) => {
+const Homepage = () => {
   return (
     <div>
       <Header />
       <div className="container">
         <Hero />
       </div>
-      <FeaturedMovies movies={props.movies} />
-      <FeaturedTV tvShows={props.tvShows} />
+      <FeaturedMovies />
+      <FeaturedTV />
       <Content />
       <Footer />
     </div>

@@ -1,7 +1,9 @@
-import React from "react";
+import { React, useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-const FeaturedTV = ({ tvShows }) => {
+import moviesContext from "../context/moviesContext";
+const FeaturedTV = () => {
+  const { tvShows } = useContext(moviesContext);
   return (
     <div>
       <Container>

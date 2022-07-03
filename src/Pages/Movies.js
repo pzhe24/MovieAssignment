@@ -1,10 +1,12 @@
-import React from "react";
+import { React, useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import moviesContext from "../context/moviesContext";
 
-const Movies = ({ movies }) => {
+const Movies = () => {
+  const { movies } = useContext(moviesContext);
   return (
     <div className="list-movies">
       <Header />
