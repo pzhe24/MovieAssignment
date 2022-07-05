@@ -4,7 +4,7 @@ import { Row, Col, ListGroup, Container, Nav } from "react-bootstrap";
 const Footer = () => {
   return (
     <div>
-      <footer class="justify-content-center">
+      <footer>
         <Container>
           <Row xs={3} sm={3} md={3} lg={3}>
             <Col>

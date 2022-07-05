@@ -1,37 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Col, Row, Container, Button } from "react-bootstrap";
-
+import moviesContext from "../context/moviesContext";
 const ShowDescription = () => {
-  const [show, setShow] = useState({
-    id: 0,
-    tvName: "",
-    year: "",
-    description: "",
-    genres: [],
-    seasons: 0,
-    episodes: 0,
-    picture: "",
-    rentPrice: "",
-    buyPrice: "",
-  });
-
   const { id } = useParams();
-
-  useEffect(() => {
-    fetch(`https://cjv-movie-api.herokuapp.com/tvshows/${id}`)
-      .then((returnedData) => {
-        return returnedData.json();
-      })
-      .then((data) => {
-        setShow(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [id]);
+  const { tvShows } = useContext(moviesContext);
+  const curr = id - 1;
 
   return (
     <div>
@@ -42,33 +18,35 @@ const ShowDescription = () => {
             <Col>
               <img
                 className="movie-poster"
-                src={show.picture}
-                alt={show.tvName}
+                src={tvShows[curr].picture}
+                alt={tvShows[curr].tvName}
               />
             </Col>
             <Col>
               <p className="title" style={{ color: "#A0BCF5" }}>
-                {show.tvName}&emsp;
-                <span class="text-info">({show.year})</span>
+                {tvShows[curr].tvName}&emsp;
+                <span class="text-info">({tvShows[curr].year})</span>
               </p>
 
-              <p className="genres">Genres: {show.genres.join(", ")}</p>
+              <p className="genres">
+                Genres: {tvShows[curr].genres.join(", ")}
+              </p>
               <p style={{ fontSize: "25px", color: "#A0BCF5" }}>Overview</p>
-              <p className="description">{show.description}</p>
+              <p className="description">{tvShows[curr].description}</p>
               <p style={{ fontSize: "20px", color: "#A0BCF5" }}>
                 Number of Seasons
               </p>
-              <p className="seasons">{show.seasons}</p>
+              <p className="seasons">{tvShows[curr].seasons}</p>
               <p style={{ fontSize: "20px", color: "#A0BCF5" }}>
                 Number of Episodes
               </p>
-              <p className="episodes">{show.episodes}</p>
+              <p className="episodes">{tvShows[curr].episodes}</p>
 
               <Button variant="primary" style={{ marginTop: "20px" }}>
-                Rent: {show.rentPrice}
+                Rent: {tvShows[curr].rentPrice}
               </Button>
               <Button variant="primary" style={{ marginTop: "20px" }}>
-                Buy Now: {show.buyPrice}
+                Buy Now: {tvShows[curr].buyPrice}
               </Button>
             </Col>
           </Row>

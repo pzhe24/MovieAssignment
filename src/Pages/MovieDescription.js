@@ -1,36 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Col, Row, Container, Button } from "react-bootstrap";
+import moviesContext from "../context/moviesContext";
 
 const MovieDescription = () => {
-  const [movie, setMovie] = useState({
-    id: 0,
-    movieName: "",
-    year: "",
-    description: "",
-    genres: [],
-    length: "",
-    picture: "",
-    rentPrice: "",
-    buyPrice: "",
-  });
-
   const { id } = useParams();
-
-  useEffect(() => {
-    fetch(`https://cjv-movie-api.herokuapp.com/movies/${id}`)
-      .then((returnedData) => {
-        return returnedData.json();
-      })
-      .then((data) => {
-        setMovie(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [id]);
+  const { movies } = useContext(moviesContext);
+  const curr = id - 1;
 
   return (
     <div>
@@ -41,27 +19,27 @@ const MovieDescription = () => {
             <Col>
               <img
                 className="movie-poster"
-                src={movie.picture}
-                alt={movie.tvName}
+                src={movies[curr].picture}
+                alt={movies[curr].tvName}
               />
             </Col>
             <Col>
               <p className="title" style={{ color: "#A0BCF5" }}>
-                {movie.movieName}&emsp;
-                <span class="text-info">({movie.year})</span>
+                {movies[curr].movieName}&emsp;
+                <span class="text-info">({movies[curr].year})</span>
               </p>
               <p className="genres">
-                Genres: {movie.genres.join(", ")}&emsp;&emsp;Runtime:{" "}
-                {movie.length}
+                Genres: {movies[curr].genres.join(", ")}&emsp;&emsp;Runtime:{" "}
+                {movies[curr].length}
               </p>
               <p style={{ fontSize: "25px", color: "#A0BCF5" }}>Overview</p>
-              <p className="description">{movie.description}</p>
+              <p className="description">{movies[curr].description}</p>
 
               <Button variant="primary" style={{ marginTop: "20px" }}>
-                Rent: {movie.rentPrice}
+                Rent: {movies[curr].rentPrice}
               </Button>
               <Button variant="primary" style={{ marginTop: "20px" }}>
-                Buy Now: {movie.buyPrice}
+                Buy Now: {movies[curr].buyPrice}
               </Button>
             </Col>
           </Row>

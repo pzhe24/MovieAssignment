@@ -8,7 +8,7 @@ const FeaturedTV = () => {
     <div>
       <Container>
         <h3 id="featuredTV-title">Featured TV Shows</h3>
-        <Row xs={2} md={3} lg={6}>
+        <Row xs={2} sm={2} md={3} lg={6}>
           {tvShows.slice(0, 6).map((show) => (
             <Col>
               <Link to={`/tv/${show.id}`}>

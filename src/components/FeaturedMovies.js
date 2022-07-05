@@ -8,7 +8,7 @@ const FeaturedMovies = () => {
     <div>
       <Container>
         <h3 id="featuredmovie-title">Featured Films</h3>
-        <Row xs={2} md={3} lg={6}>
+        <Row xs={2} sm={2} md={3} lg={6}>
           {movies.slice(6, 12).map((movie) => (
             <Col>
               <Link to={`/movies/${movie.id}`}>
